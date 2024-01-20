@@ -1,0 +1,13 @@
+.card-img-top {
+  height: 400px;
+}
+.title {
+  margin-left: 100px;
+}
+.brand {
+  font-family: "Times New Roman", Times, serif;
+}
+.container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
