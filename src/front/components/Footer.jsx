@@ -5,7 +5,7 @@ const Footer = ({ filters }) => {
   return (
     <>
       <footer className="footer text-light">
-        {JSON.stringify(filters, null, 2)}
+        {JSON.stringify(filters, null, 1)}
       </footer>
     </>
   );
