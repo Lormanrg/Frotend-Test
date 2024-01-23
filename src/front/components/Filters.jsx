@@ -1,4 +1,4 @@
-import React, { useState, useId } from "react";
+import React, { useId } from "react";
 import "../Styles/Filter.css";
 import { useFilters } from "../../Hooks/useFilters";
 
@@ -32,7 +32,7 @@ const Filters = () => {
             name=""
             id={priceFilterId}
             min="0"
-            max="100"
+            max="200"
             onChange={handleChangePrice}
             value={filters.price}
           />
