@@ -5,15 +5,18 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const addToCart = (book) => {
+    // setCart([...cart, book]);
     //Check if the book is already in the cart
     const bookInCartIndex = cart.findIndex((item) => item.id === book.id);
 
     if (bookInCartIndex >= 0) {
+      //una forma ussando structured Clone
       const newCart = structuredClone(cart);
       newCart[bookInCartIndex].quantity += 1;
       return setCart(newCart);
     } else {
       // book isn't in the cart
+
       setCart((prevState) => [
         ...prevState,
         {

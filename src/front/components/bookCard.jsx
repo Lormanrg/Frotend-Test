@@ -1,9 +1,9 @@
 import React from "react";
 import { AddToCartIcon } from "./Icon";
-import useCart from "../../Hooks/useCart";
+import useCart from "../../Hooks/useCart.jsx";
 
 const BookCard = ({ books }) => {
-  const { addToCart, cart } = useCart();
+  const { addToCart } = useCart();
   return (
     <>
       {books?.map((data) => (
