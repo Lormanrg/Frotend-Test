@@ -10,7 +10,7 @@ const Footer = () => {
     <>
       <footer className="footer text-light">
         {/* {JSON.stringify(filters, null, 2)} */}
-        {JSON.stringify(cart, null, 2)}
+        {JSON.stringify(cart, null, 1)}
       </footer>
     </>
   );
