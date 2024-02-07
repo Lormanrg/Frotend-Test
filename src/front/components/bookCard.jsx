@@ -3,7 +3,7 @@ import { AddToCartIcon, RemoveFromCartIcon } from "./Icon.jsx";
 import useCart from "../../Hooks/useCart.jsx";
 
 const BookCard = ({ books }) => {
-  const { addToCart, cart } = useCart();
+  const { addToCart, cart, removeFromCart } = useCart();
 
   const checkBookInCart = (book) => {
     return cart.some((item) => item.ISBN === book.ISBN);
@@ -30,7 +30,17 @@ const BookCard = ({ books }) => {
               </p>
               <p className="card-text">{data.book.synopsis}</p>
               <div className="d-flex justify-content-end align-items-end">
-                <button type="button" onClick={() => addToCart(data.book)}>
+                <button
+                  type="button"
+                  className={`btn ${
+                    isBookInCart ? "btn-danger" : "btn-primary"
+                  }`}
+                  onClick={() =>
+                    isBookInCart
+                      ? removeFromCart(data.book)
+                      : addToCart(data.book)
+                  }
+                >
                   {isBookInCart ? <RemoveFromCartIcon /> : <AddToCartIcon />}
                 </button>
               </div>

@@ -25,12 +25,18 @@ export const CartProvider = ({ children }) => {
     ]);
   };
 
+  const removeFromCart = (book) => {
+    setCart((prevState) => prevState.filter((item) => item.ISBN !== book.ISBN));
+  };
+
   const cleanCart = () => {
     setCart([]);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, cleanCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, cleanCart, removeFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );
